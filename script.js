@@ -93,6 +93,20 @@ function checkWinner() {
     computerScoreNum = 0;
     playerScore.textContent = "Player Score: 0";
     computerScore.textContent = "Computer Score: 0";
+    /* Confetti from the left side */
+    confetti({
+      particleCount: 150,
+      angle: 60,
+      spread: 100,
+      origin: { x: 0 },
+    });
+    /* Confetti from the right side */
+    confetti({
+      particleCount: 150,
+      angle: 120,
+      spread: 100,
+      origin: { x: 1 },
+    });
   } else if (computerScoreNum === 5) {
     totalComputerRoundsNum++;
     totalComputerRounds.textContent = `Computer Rounds: ${totalComputerRoundsNum}`;
