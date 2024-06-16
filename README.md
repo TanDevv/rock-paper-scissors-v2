@@ -9,3 +9,7 @@ There are some additions I would like to still add to this project:
 
 • Highlight player/computer scores in bold using spans in JS
 • Add dynamic SVGs that change when a user clicks a button via JS
+
+Credits:
+
+Confetti Effect by Kiril Vatev: https://github.com/catdad/canvas-confetti
