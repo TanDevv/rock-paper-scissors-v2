@@ -79,3 +79,26 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* General Styling */
+
+body {
+  background-color: hsl(0, 0%, 95%);
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+
+header {
+  background-color: hsl(0, 0%, 15%);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+h1 {
+  color: hsl(0, 0%, 95%);
+  font-size: 3rem;
+}
