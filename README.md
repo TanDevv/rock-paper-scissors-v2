@@ -8,7 +8,6 @@ I wanted to start over and completely develop this project including HTML/CSS/JS
 There are some additions I would like to still add to this project:
 
 ~~• Highlight player/computer scores in bold using spans in JS~~ (DONE)
-• Add dynamic SVGs that change when a user clicks a button via JS
 
 Credits:
 
