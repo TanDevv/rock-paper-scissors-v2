@@ -36,7 +36,10 @@
               />
             </svg>
           </p>
-          <p class="score playerScore">Player: 0</p>
+          <div class="score-content-text">
+            <p class="score playerScore">Player:</p>
+            <span class="span-bold playerScoreSpan">0</span>
+          </div>
         </div>
         <div class="score-content">
           <p class="sign computerSign">
@@ -52,7 +55,10 @@
               />
             </svg>
           </p>
-          <p class="score computerScore">Computer: 0</p>
+          <div class="score-content-text">
+            <p class="score computerScore">Computer:</p>
+            <span class="span-bold computerScoreSpan">0</span>
+          </div>
         </div>
       </div>
       <div class="buttons_container">
@@ -193,8 +199,14 @@
         </button>
       </div>
       <div class="round-keep_container">
-        <p class="round-keep playerRounds">Player Rounds: 0</p>
-        <p class="round-keep computerRounds">Computer Rounds: 0</p>
+        <div class="score-content-text">
+          <p class="round-keep playerRounds">Player Rounds:</p>
+          <span class="span-bold totalPlayerScoreSpan">0</span>
+        </div>
+        <div class="score-content-text">
+          <p class="round-keep computerRounds">Computer Rounds:</p>
+          <span class="span-bold totalComputerScoreSpan">0</span>
+        </div>
       </div>
       <div class="reset_container">
         <button class="reset-button">Reset?</button>

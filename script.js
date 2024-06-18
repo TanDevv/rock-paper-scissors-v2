@@ -9,9 +9,13 @@ let totalComputerRoundsNum = 0;
 let scoreMessage = document.querySelector(".score-message");
 let scoreInfo = document.querySelector(".score-info");
 let playerSign = document.querySelector(".playerSign");
-let playerScore = document.querySelector(".playerScore");
+let playerScoreText = document.querySelector(".playerScore");
+let playerScoreSpan = document.querySelector(".playerScoreSpan");
+let totalPlayerScoreSpan = document.querySelector(".totalPlayerScoreSpan");
 let computerSign = document.querySelector(".computerSign");
-let computerScore = document.querySelector(".computerScore");
+let computerScoreText = document.querySelector(".computerScore");
+let computerScoreSpan = document.querySelector(".computerScoreSpan");
+let totalComputerScoreSpan = document.querySelector(".totalComputerScoreSpan");
 let rockBtn = document.querySelector(".btn-rock");
 let paperBtn = document.querySelector(".btn-paper");
 let scissorsBtn = document.querySelector(".btn-scissors");
@@ -35,12 +39,14 @@ function playRound(player, computer) {
     playerScoreNum++;
     scoreMessage.textContent = `You pick ${player}. Computer picks ${computer}.`;
     scoreInfo.textContent = "You win! Good job!";
-    playerScore.textContent = `Player: ${playerScoreNum}`;
+    playerScoreText.textContent = "Player:";
+    playerScoreSpan.textContent = `${playerScoreNum}`;
   } else {
     computerScoreNum++;
     scoreMessage.textContent = `You pick ${player}. Computer picks ${computer}.`;
     scoreInfo.textContent = "Aw shucks, you lose! You got this!";
-    computerScore.textContent = `Computer: ${computerScoreNum}`;
+    computerScoreText.textContent = "Computer:";
+    computerScoreSpan.textContent = `${computerScoreNum}`;
   }
 
   switch (computer) {
@@ -76,23 +82,30 @@ resetBtn.addEventListener("click", function () {
   totalComputerRoundsNum = 0;
   scoreMessage.textContent = "First to score 5 points wins the game!";
   scoreInfo.textContent = "Choose your option:";
-  playerScore.textContent = "Player Score: 0";
-  computerScore.textContent = "Computer Score: 0";
-  totalPlayerRounds.textContent = "Player Rounds: 0";
-  totalComputerRounds.textContent = "Computer Rounds: 0";
+  playerScoreText.textContent = "Player:";
+  playerScoreSpan.textContent = `${playerScoreNum}`;
+  computerScoreText.textContent = "Computer:";
+  computerScoreSpan.textContent = `${computerScoreNum}`;
+  totalPlayerRounds.textContent = "Player Rounds:";
+  totalPlayerScoreSpan.textContent = `${totalPlayerRoundsNum}`;
+  totalComputerRounds.textContent = "Computer Rounds:";
+  totalComputerScoreSpan.textContent = `${totalComputerRoundsNum}`;
 });
 
 function checkWinner() {
   if (playerScoreNum === 5) {
     totalPlayerRoundsNum++;
-    totalPlayerRounds.textContent = `Player Rounds: ${totalPlayerRoundsNum}`;
+    totalPlayerRounds.textContent = "Player Rounds:";
+    totalPlayerScoreSpan.textContent = `${totalPlayerRoundsNum}`;
     scoreMessage.textContent =
       "Congratulations! You win the game! Choose an option to try again!";
     scoreInfo.textContent = "";
     playerScoreNum = 0;
     computerScoreNum = 0;
-    playerScore.textContent = "Player Score: 0";
-    computerScore.textContent = "Computer Score: 0";
+    playerScoreText.textContent = "Player:";
+    playerScoreSpan.textContent = `${playerScoreNum}`;
+    computerScoreText.textContent = "Computer:";
+    computerScoreSpan.textContent = `${computerScoreNum}`;
     /* Confetti from the left side */
     confetti({
       particleCount: 150,
@@ -109,13 +122,16 @@ function checkWinner() {
     });
   } else if (computerScoreNum === 5) {
     totalComputerRoundsNum++;
-    totalComputerRounds.textContent = `Computer Rounds: ${totalComputerRoundsNum}`;
+    totalComputerRounds.textContent = "Computer Rounds:";
+    totalComputerScoreSpan.textContent = `${totalComputerRoundsNum}`;
     scoreMessage.textContent =
       "Oh no! You lost the game! Choose an option to try again!";
     scoreInfo.textContent = "";
     playerScoreNum = 0;
     computerScoreNum = 0;
-    playerScore.textContent = "Player Score: 0";
-    computerScore.textContent = "Computer Score: 0";
+    playerScoreText.textContent = "Player:";
+    playerScoreSpan.textContent = `${playerScoreNum}`;
+    computerScoreText.textContent = "Computer:";
+    computerScoreSpan.textContent = `${computerScoreNum}`;
   }
 }
